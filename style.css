@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+  }
+  
+  .keyboard-container {
+    display: flex;
+    gap: 8px;
+    margin: 6px 0;
+  }
+  
+  .keyboard {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: black;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  
+    /* Animated solid background colors */
+    animation: colorCycle 5s infinite;
+    background-color: #ff00b4;
+  
+    /* LED glow */
+    box-shadow:
+      0 0 8px rgba(255, 0, 180, 0.5),
+      0 0 15px rgba(0, 255, 188, 0.4),
+      0 0 30px rgba(142, 165, 255, 0.3);
+  }
+  
+  /* Hover effect (optional) */
+  .keyboard:hover {
+    box-shadow:
+      0 0 12px rgba(255, 0, 180, 0.7),
+      0 0 25px rgba(0, 255, 188, 0.6),
+      0 0 40px rgba(142, 165, 255, 0.5);
+  }
+  
+  /* Pressed effect */
+  .keyboard:active {
+    transform: translateY(4px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Color cycle animation */
+  @keyframes colorCycle {
+    0%   { background-color: #ff00b4; }
+    25%  { background-color: #00ffbc; }
+    50%  { background-color: #8ea5ff; }
+    75%  { background-color: #ffffff; }
+    100% { background-color: #c493ff; }
+  }
+  
+  .keyboard-border{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+  }
